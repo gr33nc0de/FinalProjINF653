@@ -38,3 +38,7 @@
 20240505	17:46:33	e6eedd4a-77f6-48bb-8023-c132d8aeb81a	GET	undefined	/
 20240505	17:46:42	656e0b5e-843b-4c81-9179-35464602fdf3	GET	undefined	/states
 20240505	17:47:10	dc475ed9-04d8-4dae-85dd-d7f7176405ed	GET	undefined	/states/?contig=true
+20240505	18:30:55	f9e78afc-ee75-40ed-9249-77dc2c1ac086	GET	undefined	/states/GA
+20240505	18:31:28	009c372e-818c-4b3b-929d-aebcdcc816dc	GET	undefined	/states/
+20240505	18:31:31	a9f4290c-f971-4b6b-a200-09664451c167	GET	undefined	/states/KS/funfact
+20240505	18:31:36	76298e22-413e-4c63-9ff3-07bcc825de3d	GET	undefined	/states/KS/funfact
