@@ -1,11 +1,15 @@
-const verifyStates = (...allowedStates) => {
-    return (req, res, next) => {
-        if (!req?.state) return res.sendStatus(401); // Assuming the state information is stored in req.state
-        const statesArray = [...allowedStates];
-        const result = statesArray.includes(req.state); // Assuming req.state contains the state code
-        if (!result) return res.sendStatus(401);
-        next();
+const verifyStates = (req, res, next) => {
+    const allowedStates = statesData.map(state => state.code.toUpperCase()); // Step 1 and 2
+    const stateCode = req.params.state.toUpperCase(); // Step 5
+
+    const foundState = allowedStates.find(state => state === stateCode); // Step 3
+
+    if (!foundState) { // Step 4
+        return res.sendStatus(400).json({ error: 'Invalid state abbreviation' }); // Respond with appropriate error
     }
-}
+
+    req.stateCode = foundState; // Step 5
+    next();
+};
 
 module.exports = verifyStates;

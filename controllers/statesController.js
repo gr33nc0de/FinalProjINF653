@@ -108,22 +108,29 @@ const getStateAdmissionDate = async (req, res) => {
 }
 
 const addFunFact = async (req, res) => {
-    const stateCode = req.params.stateCode;
+    const stateCode = req.params.state;
+    console.log('State Code:', stateCode); // Log the state code extracted from the request parameters
     const { funfacts } = req.body;
+    console.log('Fun Facts:', funfacts); // Log the fun facts received in the request body
     try {
         const state = await State.findOneAndUpdate(
             { stateCode },
             { $push: { funfacts: { $each: funfacts } } },
             { new: true }
         );
+        console.log('State:', state); // Log the state retrieved from the database
         if (!state) {
+            console.log('State not found'); // Log if the state is not found
             return res.status(404).json({ message: 'State not found.' });
         }
         res.json(state);
     } catch (err) {
+        console.error('Error:', err); // Log any errors that occur during execution
         res.status(500).json({ message: err.message });
     }
 }
+
+
 
 const updateFunFact = async (req, res) => {
     const stateCode = req.params.stateCode;

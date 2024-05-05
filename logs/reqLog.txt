@@ -1,0 +1,12 @@
+20240505	16:39:23	4ffa95e8-76c0-460b-b8fc-304de4b08c4d	GET	undefined	/state
+20240505	16:45:30	dfc8cb40-79a9-4464-9e13-325c68ef0e4f	POST	undefined	/states/kansas/funfact?
+20240505	16:45:37	bd43ffe5-3936-4f7a-81f9-0788dbc14a3d	POST	undefined	/states/Kansas/funfact?
+20240505	16:46:24	f3167757-4232-474d-b350-ca797f1876cc	POST	undefined	/states/KS/funfact?
+20240505	16:46:45	872c9d6c-a75b-4282-9711-5b78749aa935	POST	undefined	/states/KS/funfact
+20240505	16:48:22	02a305ef-8c79-4dcf-8fb5-349ffd57ab50	POST	undefined	/states/KS/funfact
+20240505	16:48:29	da0dd38a-33b0-4d09-af82-eb792b440820	POST	undefined	/states/KS/funfact
+20240505	16:50:43	c1bbc5be-8f06-4e15-b8a8-be575d004980	POST	undefined	/states/KS/funfact
+20240505	17:02:13	be74966b-d58b-476b-a744-0ee70c052818	GET	undefined	/
+20240505	17:02:18	3c84b74f-0ba5-4939-8bb7-916ee97e03e2	GET	undefined	/
+20240505	17:02:18	8d43e3b0-fee3-4d6e-aa54-e05954fddfeb	GET	undefined	/css/style.css
+20240505	17:02:18	e6de8625-ac92-4a0a-b487-65b4f3049be8	GET	undefined	/favicon.ico
