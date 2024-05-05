@@ -15,3 +15,14 @@
 20240505	17:06:02	98432085-13e4-4284-bd1c-a8fec26a9e75	GET	undefined	/
 20240505	17:07:01	a3afd11b-7cf3-4ca3-beb8-fc00250e0167	GET	undefined	/nonexistent
 20240505	17:16:51	b78c5dfe-c69d-46a1-bed7-653b3bb6565b	GET	undefined	/nonexistent
+20240505	17:17:22	f7d81af3-3631-45d6-add4-094d4898cf73	GET	undefined	/nonexistent
+20240505	17:30:17	e6e6e5a4-01a2-4d8c-b935-d940268db50d	GET	undefined	/nonexistent
+20240505	17:30:17	f05af884-42e0-4ee2-bc72-6b39422a03c0	GET	undefined	/css/style.css
+20240505	17:30:20	21576197-0cb6-48cc-a607-0ff7f9cca9e8	GET	undefined	/
+20240505	17:30:20	7e279bff-2c94-4310-8c5e-bb2e131f6c93	GET	undefined	/css/style.css
+20240505	17:31:03	85e488e4-4941-488f-830c-825c21b58a52	GET	undefined	/
+20240505	17:31:03	ca8e73b5-57f9-4d3e-aece-8c47cff11d69	GET	undefined	/css/style.css
+20240505	17:34:08	9519f7d6-5162-49c0-8909-e42a06b9589d	GET	undefined	/nonexistent
+20240505	17:34:08	b6e4e413-2097-4709-bfdf-6115e6e21505	GET	undefined	/css/style.css
+20240505	17:34:12	c764913c-b1d6-48ed-9380-f3634f530617	GET	undefined	/
+20240505	17:34:12	31d4ac67-fb95-4f78-a20c-a1f821cb5b40	GET	undefined	/css/style.css

@@ -32,6 +32,11 @@ app.use(cookieParser());
 //serve static files
 app.use('/', express.static(path.join(__dirname, '/public')));
 
+// Serve the index.html file for the root endpoint
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views', 'index.html'));
+});
+
 // routes
 app.use('/states', require('./routes/api/states'));
 
