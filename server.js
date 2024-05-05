@@ -35,6 +35,7 @@ app.use('/', express.static(path.join(__dirname, '/public')));
 // routes
 app.use('/states', require('./routes/api/states'));
 
+// Catch-all middleware for handling 404 errors
 app.all('*', (req, res) => {
     res.status(404);
     if (req.accepts('html')) {
@@ -46,6 +47,7 @@ app.all('*', (req, res) => {
     }
 });
 
+// Error handler middleware
 app.use(errorHandler);
 
 mongoose.connection.once('open', () => {

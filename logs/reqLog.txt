@@ -10,3 +10,8 @@
 20240505	17:02:18	3c84b74f-0ba5-4939-8bb7-916ee97e03e2	GET	undefined	/
 20240505	17:02:18	8d43e3b0-fee3-4d6e-aa54-e05954fddfeb	GET	undefined	/css/style.css
 20240505	17:02:18	e6de8625-ac92-4a0a-b487-65b4f3049be8	GET	undefined	/favicon.ico
+20240505	17:05:32	ac17640f-76c8-4882-bd04-8e686db148d8	GET	undefined	/
+20240505	17:05:40	9c67849e-e5fb-4843-b708-a1d0a04c1a7c	GET	undefined	/
+20240505	17:06:02	98432085-13e4-4284-bd1c-a8fec26a9e75	GET	undefined	/
+20240505	17:07:01	a3afd11b-7cf3-4ca3-beb8-fc00250e0167	GET	undefined	/nonexistent
+20240505	17:16:51	b78c5dfe-c69d-46a1-bed7-653b3bb6565b	GET	undefined	/nonexistent
