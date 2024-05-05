@@ -1,8 +1,16 @@
+const path = require('path');
+const fs = require('fs');
+
 const State = require('../model/States');
+const statesDataPath = path.join(__dirname, '../model/statesData.json');
 
 const getAllStates = async (req, res) => {
     try {
-        const states = await State.find();
+        // Read the statesData.json file
+        const statesData = fs.readFileSync(statesDataPath, 'utf8');
+        // Parse the JSON data
+        const states = JSON.parse(statesData);
+        // Return the states data as the response
         res.json(states);
     } catch (err) {
         res.status(500).json({ message: err.message });
