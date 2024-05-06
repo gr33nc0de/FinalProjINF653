@@ -1,22 +1,15 @@
-const path = require('path');
 const fs = require('fs');
+const path = require('path');
 
-const State = require('../model/States');
+// Path to states data file
 const statesDataPath = path.join(__dirname, '../model/statesData.json');
-let states;
-
 // Read and parse the statesData.json file
-try {
-    const statesData = fs.readFileSync(statesDataPath, 'utf8');
-    states = JSON.parse(statesData);
-} catch (err) {
-    console.error('Error reading statesData.json:', err);
-}
+const statesData = JSON.parse(fs.readFileSync(statesDataPath, 'utf8'));
 
 const getAllStates = async (req, res) => {
     try {
-        // Return the states data as the response
-        res.json(states);
+        // Return all states data
+        res.json(statesData);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -25,7 +18,7 @@ const getAllStates = async (req, res) => {
 const getContiguousStates = async (req, res) => {
     try {
         // Filter contiguous states (not AK or HI)
-        const contiguousStates = states.filter(state => !['AK', 'HI'].includes(state.code));
+        const contiguousStates = statesData.filter(state => !['AK', 'HI'].includes(state.code));
         // Return contiguous states as the response
         res.json(contiguousStates);
     } catch (err) {
@@ -36,7 +29,7 @@ const getContiguousStates = async (req, res) => {
 const getNonContiguousStates = async (req, res) => {
     try {
         // Filter non-contiguous states (AK or HI)
-        const nonContiguousStates = states.filter(state => ['AK', 'HI'].includes(state.code));
+        const nonContiguousStates = statesData.filter(state => ['AK', 'HI'].includes(state.code));
         // Return non-contiguous states as the response
         res.json(nonContiguousStates);
     } catch (err) {
