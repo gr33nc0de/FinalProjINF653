@@ -3,13 +3,18 @@ const fs = require('fs');
 
 const State = require('../model/States');
 const statesDataPath = path.join(__dirname, '../model/statesData.json');
+let states;
+
+// Read and parse the statesData.json file
+try {
+    const statesData = fs.readFileSync(statesDataPath, 'utf8');
+    states = JSON.parse(statesData);
+} catch (err) {
+    console.error('Error reading statesData.json:', err);
+}
 
 const getAllStates = async (req, res) => {
     try {
-        // Read the statesData.json file
-        const statesData = fs.readFileSync(statesDataPath, 'utf8');
-        // Parse the JSON data
-        const states = JSON.parse(statesData);
         // Return the states data as the response
         res.json(states);
     } catch (err) {
@@ -19,8 +24,10 @@ const getAllStates = async (req, res) => {
 
 const getContiguousStates = async (req, res) => {
     try {
-        const states = await State.find({ stateCode: { $nin: ['AK', 'HI'] } });
-        res.json(states);
+        // Filter contiguous states (not AK or HI)
+        const contiguousStates = states.filter(state => !['AK', 'HI'].includes(state.code));
+        // Return contiguous states as the response
+        res.json(contiguousStates);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
@@ -28,25 +35,31 @@ const getContiguousStates = async (req, res) => {
 
 const getNonContiguousStates = async (req, res) => {
     try {
-        const states = await State.find({ stateCode: { $in: ['AK', 'HI'] } });
-        res.json(states);
+        // Filter non-contiguous states (AK or HI)
+        const nonContiguousStates = states.filter(state => ['AK', 'HI'].includes(state.code));
+        // Return non-contiguous states as the response
+        res.json(nonContiguousStates);
     } catch (err) {
         res.status(500).json({ message: err.message });
     }
 }
 
-const getStateByCode = async (req, res) => {
+const getStateByCode = (req, res) => {
+    // Extract state code from request parameters
     const stateCode = req.params.stateCode;
-    try {
-        const state = await State.findOne({ stateCode });
-        if (!state) {
-            return res.status(404).json({ message: 'State not found.' });
-        }
-        res.json(state);
-    } catch (err) {
-        res.status(500).json({ message: err.message });
+
+    // Find the state object with matching code in the states array
+    const state = states.find(state => state.code === stateCode);
+
+    // If state is not found, return 404 status with an error message
+    if (!state) {
+        return res.status(404).json({ message: `State with code ${stateCode} not found` });
     }
+
+    // If state is found, return it as JSON response
+    res.json(state);
 }
+
 
 const getRandomFunFact = async (req, res) => {
     const stateCode = req.params.stateCode;

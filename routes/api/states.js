@@ -4,7 +4,7 @@ const statesController = require('../../controllers/statesController');
 
 // Define routes for state-specific endpoints
 router.get('/', statesController.getAllStates);
-router.get('/:state', statesController.getStateByCode);
+router.get('/states/:state', statesController.getStateByCode);
 router.get('/:state/funfact', statesController.getRandomFunFact);
 router.get('/:state/capital', statesController.getStateCapital);
 router.get('/:state/nickname', statesController.getStateNickname);
